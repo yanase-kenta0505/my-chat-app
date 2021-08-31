@@ -8,11 +8,13 @@ export const actions = {
           .auth()
           .signOut()
           .then(() => {
+            console.log('signout')
             user.delete().then(() => {
               router.push("/login");
             });
           });
       }
+      unsubscribe();
     });
   }
 };
