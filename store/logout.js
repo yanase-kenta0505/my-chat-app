@@ -9,8 +9,9 @@ export const actions = {
           .signOut()
           .then(() => {
             console.log('signout')
+            router.push("/login");
             user.delete().then(() => {
-              router.push("/login");
+              console.log('delete')
             });
           });
       }

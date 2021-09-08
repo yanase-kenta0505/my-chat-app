@@ -9,7 +9,7 @@
       label="comment"
       auto-grow
     ></v-textarea>
-
+  <pre>{{chatData}}</pre>
     <v-btn @click="post">POST</v-btn>
     <v-btn @click="logout" class="mt-10">logOut</v-btn>
   </div>
@@ -26,6 +26,9 @@ export default {
     loginUserName() {
       return this.$store.state.loginUserName;
     },
+    chatData(){
+      return this.$store.getters['chat/chatData']
+    }
   },
   methods: {
     logout() {
